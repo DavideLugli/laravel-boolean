@@ -1,57 +1,98 @@
 @mixin clearfix {
-  &::after {
-  content: '';
-  display: table;
-  clear: both;
-  }
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 .navbar {
-  color: #1E3E5B;
-  height: 90px;
-  background-color: azure;
-  // background-color: #fff;
-  @include clearfix;
-  .logo {
-    line-height: 90px;
-    float: left;
-    padding: 15px;
-  img {
-    width: 130px;
-  }
-  }
-  ul {
- list-style: none;
- text-align: right;
-    li {
-    display: inline-block;
-    margin: 0 20px;
-    line-height: 90px;
-    a {
-      text-decoration: none;
-text-transform: uppercase;
-&.active {
-border-bottom: 2px solid #61CE4E;
-}
+    color: #1E3E5B;
+    height: 90px;
+    background-color: azure;
+    // background-color: #fff;
+    @include clearfix;
+
+    .logo {
+        line-height: 90px;
+        float: left;
+        padding: 15px;
+
+        img {
+            width: 130px;
+        }
     }
+
+    ul {
+        list-style: none;
+        text-align: right;
+
+        li {
+            display: inline-block;
+            margin: 0 20px;
+            line-height: 90px;
+
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+
+                &.active {
+                    border-bottom: 2px solid #61CE4E;
+                }
+            }
+        }
     }
-  }
 }
 
 .nav-footer {
-  background-color: #1B3C59;
-  height: 140px;
-  @include clearfix;
-  ul {
-    float: right;
-    list-style: none;
-    a {
-      color: white;
+    background-color: #1B3C59;
+    height: 140px;
+    @include clearfix;
+
+    ul {
+        float: right;
+        list-style: none;
+
+        a {
+            color: white;
+        }
     }
-  }
+}
+
+.students {
+    background-color: #E8EBF1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+
+    .student {
+        border-radius: 10px;
+        width: 40%;
+        margin: 20px 10px;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 1px 6px 17px 1px rgba(0,0,0,0.15);
+
+        .info {
+            @include clearfix;
+
+            img {
+                width: 90px;
+                margin-right: 10px;
+                border-radius: 5px;
+                float: left;
+            }
+        }
+
+        .description {
+            margin: 10px 0;
+        }
+    }
 }
